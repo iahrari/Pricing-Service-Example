@@ -1,7 +1,7 @@
 package com.github.iahrari.pricingservice.service;
 
-import com.github.iahrari.pricingservice.dto.Price;
+import com.github.iahrari.pricingservice.dto.PriceDTO;
 
 public interface PriceService {
-    Price getPrice(String source, String destination);
+    PriceDTO getPrice(String source, String destination);
 }

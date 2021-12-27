@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.github.iahrari.pricingservice.dto.Price;
+import com.github.iahrari.pricingservice.dto.PriceDTO;
 import com.github.iahrari.pricingservice.exception.PriceRequestFieldsException;
 
 import org.springframework.stereotype.Service;
@@ -36,12 +36,12 @@ public class PriceServiceImpl implements PriceService {
         );
 
     @Override
-    public Price getPrice(String source, String destination) {
+    public PriceDTO getPrice(String source, String destination) {
         var sourcePrices = prices.get(source.toLowerCase());
         if(sourcePrices != null) {
             var price = sourcePrices.get(destination.toLowerCase());
             if(price != null) 
-                return new Price(source, destination, price);
+                return new PriceDTO(source, destination, price);
         }
 
         throw checkWrongFields(source, destination);
