@@ -4,14 +4,14 @@ import java.math.BigDecimal;
 
 import javax.validation.constraints.NotBlank;
 
-public class Price {
+public class PriceDTO {
     @NotBlank
     private String source;
     @NotBlank
     private String destination;
     private BigDecimal price;
     
-    public Price(String source, String destination, BigDecimal price){
+    public PriceDTO(String source, String destination, BigDecimal price){
         this.source = source;
         this.destination = destination;
         this.price = price;

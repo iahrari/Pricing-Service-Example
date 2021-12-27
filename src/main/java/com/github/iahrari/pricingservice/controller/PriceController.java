@@ -2,7 +2,7 @@ package com.github.iahrari.pricingservice.controller;
 
 import javax.validation.Valid;
 
-import com.github.iahrari.pricingservice.dto.Price;
+import com.github.iahrari.pricingservice.dto.PriceDTO;
 import com.github.iahrari.pricingservice.service.PriceService;
 
 import org.springframework.http.ResponseEntity;
@@ -21,7 +21,7 @@ public class PriceController {
     }
     
     @PostMapping
-    public ResponseEntity<Price> getPrice(@Valid @RequestBody Price price) {
+    public ResponseEntity<PriceDTO> getPrice(@Valid @RequestBody PriceDTO price) {
         return ResponseEntity.ok(priceService.getPrice(
             price.getSource(), price.getDestination()));
     } 
