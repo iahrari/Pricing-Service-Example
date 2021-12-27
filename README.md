@@ -20,17 +20,20 @@ You can simply run this project with Intelij Idea or with Spring boot extension 
 
 * **URL**
 
-  /price?source={source}&destination={destination}
+  /api/v1/price
 
 * **Method:**
 
-  `GET`
+  `POST`
 
-* **Data Params**
-
-  * **Source:** is a string data for a order.
-  * **Destination:** is a string data for a order.
-
+* **Request Body**
+    * **Content:** 
+        ```
+        { 
+            "source" : "String", 
+            "destination": "String"
+        }
+        ```
 
 * **Success Response:**
 
