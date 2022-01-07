@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.ApiImplicitParam;
+
 @RestController
 @RequestMapping("/api/v1/price")
 public class PriceController {
@@ -20,6 +22,12 @@ public class PriceController {
         this.priceService = priceService;
     }
     
+    @ApiImplicitParam(
+            name = "Authorization",
+            value = "Access Token",
+            required = true,
+            paramType = "header",
+            example = "Bearer access_token")
     @PostMapping
     public ResponseEntity<PriceDTO> getPrice(@Valid @RequestBody PriceDTO price) {
         return ResponseEntity.ok(priceService.getPrice(
