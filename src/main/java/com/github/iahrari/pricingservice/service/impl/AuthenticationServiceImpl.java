@@ -1,9 +1,10 @@
-package com.github.iahrari.pricingservice.service;
+package com.github.iahrari.pricingservice.service.impl;
 
 import com.github.iahrari.pricingservice.config.jwt.JwtTokenUtil;
 import com.github.iahrari.pricingservice.dto.AuthResponse;
 import com.github.iahrari.pricingservice.dto.AuthenticationUserDTO;
 import com.github.iahrari.pricingservice.exception.UserAuthenticationException;
+import com.github.iahrari.pricingservice.service.AuthenticationService;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
