@@ -1,4 +1,4 @@
-package com.github.iahrari.pricingservice.service;
+package com.github.iahrari.pricingservice.service.impl;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.github.iahrari.pricingservice.dto.PriceDTO;
 import com.github.iahrari.pricingservice.exception.PriceRequestFieldsException;
+import com.github.iahrari.pricingservice.service.PriceService;
 
 import org.springframework.stereotype.Service;
 

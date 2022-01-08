@@ -3,6 +3,9 @@ package com.github.iahrari.pricingservice.exception;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.github.iahrari.pricingservice.dto.ResponseError;
+
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -29,5 +32,14 @@ public class GeneralExceptionHandler {
         return ResponseEntity
                 .badRequest()
                 .body(errors);
+    }
+
+    @ExceptionHandler(UserAuthenticationException.class)
+    public ResponseEntity<ResponseError> handleUserAuthenticationErrors(UserAuthenticationException ex){
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                .body(ResponseError.builder()
+                        .message(ex.getMessage())
+                        .build()
+                );
     }
 }
